@@ -2,6 +2,10 @@
 
 > Giao diện người dùng cho nền tảng tuyển dụng thông minh **DDAMatch (TalentMatch)**, tích hợp AI phân tích CV, tính điểm tương thích công việc và quản lý quy trình phỏng vấn.
 
+## 📚 Tài liệu dự án
+
+Tài liệu dùng chung cho Frontend, Backend, AI và thiết kế nằm tại [recruitment-docs](https://github.com/yopaz-ducdt/recruitment-docs), gồm [đặc tả API](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/api_specifications.md), [design system](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/ui_ux_design_system.md) và [roadmap](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/project_roadmap_and_decisions.md).
+
 ---
 
 ## 🚀 Công Nghệ Sử Dụng
@@ -11,7 +15,7 @@
 | **Core Framework** | **React 19** (`^19.3.x`) | Kiến trúc Component hiện đại, React Server Actions / Hooks mới |
 | **Language** | **TypeScript** (`~6.0.x`) | Chế độ `strict: true`, nghiêm cấm `any` |
 | **Build Tool** | **Vite 8** (`^8.3.x`) | Bundler siêu tốc, HMR, hỗ trợ proxy API `/api` |
-| **Styling** | **Tailwind CSS v4** (`^4.3.x`) | Tích hợp trực tiếp qua `@tailwindcss/vite`, cấu hình biến `@theme` trong CSS |
+| **Styling** | **Tailwind CSS v4** (`^4.3.x`) | Tích hợp qua `@tailwindcss/vite`; design tokens trong `src/index.css` bằng `@theme` |
 | **Routing** | **React Router v7** (`^7.18.x`) | Quản lý route đa phân hệ, Route Guard theo quyền (RBAC) |
 | **Server State** | **TanStack React Query v5** (`^5.108.x`) | Quản lý cache, polling, optimistic updates (cú pháp object `useQuery`) |
 | **HTTP Client** | **Axios** (`^1.21.x`) | Instance tập trung với interceptor tự động refresh token khi gặp `401` |
@@ -22,7 +26,7 @@
 
 ## 📐 Kiến Trúc Giao Diện & Design System (Stitch)
 
-Giao diện được thiết kế theo hệ thống **Intelligent Precision Talent Architecture** (xem chi tiết tại [`../docs/ui_ux_design_system.md`](file:///home/ducdt/Other/docs/ui_ux_design_system.md)):
+Giao diện được thiết kế theo hệ thống **Intelligent Precision Talent Architecture** (xem chi tiết tại [UI/UX design system](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/ui_ux_design_system.md)):
 
 - **Kiểu chữ (Typography)**: Phông nền chuẩn `Inter` (`line-height >= 1.4`). Bắt buộc dùng `tabular-nums` cho số liệu, mức lương, phần trăm và điểm AI Matching.
 - **Bảng màu chủ đạo (Color Palette)**:
@@ -32,7 +36,14 @@ Giao diện được thiết kế theo hệ thống **Intelligent Precision Tale
   - **Surface Canvas**: `#FAF8FF` — Nền trang ứng dụng.
   - **Surface Container Lowest**: `#FFFFFF` — Nền thẻ card, bảng biểu, modal.
   - **Status**: Success `#10B981` (điểm tương thích $\ge 85\%$), Warning `#F59E0B`, Error `#EF4444`.
-- **Bo góc (Corner Radii)**: `rounded` (8px) cho button/input; `rounded-lg` (16px) cho card công việc; `rounded-xl` (24px) cho modal/hero; `rounded-full` cho badge và avatar.
+- **Bo góc (Corner Radii)**: Dùng utility Tailwind v4 có scale tường minh. Với scale mặc định, dùng `rounded-lg` (8px) cho button/input, `rounded-2xl` (16px) cho card, `rounded-3xl` (24px) cho hero/modal và `rounded-full` cho badge/avatar.
+
+## 📦 Quy Ước Import
+
+- Dùng alias `@/` cho import giữa các thư mục trong `src/`, ví dụ `@/components/ui/Card` hoặc `@/hooks/useAuth`.
+- Giữ import tương đối `./` cho module cùng thư mục hoặc file lân cận, ví dụ `./LoadingSpinner`.
+- Alias `@/` ánh xạ tới `src/` và được cấu hình trong `tsconfig.app.json` cùng `vite.config.ts`; hai mapping phải luôn đồng bộ.
+- Dùng utility Tailwind v4 hiện hành như `bg-linear-to-r`, `shadow-xs`, `backdrop-blur-xs`, `outline-hidden` và opacity modifier (`bg-primary/10`).
 
 ---
 
@@ -158,9 +169,9 @@ Dự án áp dụng quy chuẩn phát triển nghiêm ngặt hỗ trợ cả l�
 
 ## 📚 Tài Liệu Kỹ Thuật Liên Quan
 
-- 📘 [Hướng dẫn triển khai Frontend chi tiết (`docs/FRONTEND_DEVELOPMENT_GUIDE.md`)](file:///home/ducdt/Other/docs/FRONTEND_DEVELOPMENT_GUIDE.md)
-- 🔌 [Đặc tả API Backend toàn diện (`docs/api_specifications.md`)](file:///home/ducdt/Other/docs/api_specifications.md)
-- 🎨 [Đặc tả Hệ thống Thiết kế UI/UX Stitch (`docs/ui_ux_design_system.md`)](file:///home/ducdt/Other/docs/ui_ux_design_system.md)
-- 🗄️ [Từ điển Dữ liệu Cơ sở Dữ liệu (`docs/database_schema.md`)](file:///home/ducdt/Other/docs/database_schema.md)
-- 🗺️ [Lộ trình Dự án & Các Quyết định Kỹ thuật (`docs/project_roadmap_and_decisions.md`)](file:///home/ducdt/Other/docs/project_roadmap_and_decisions.md)
-- 🌐 [Kho Tri thức Dự án Toàn Diện (`docs/README.md`)](file:///home/ducdt/Other/docs/README.md)
+- 📘 [Hướng dẫn triển khai Frontend chi tiết (`docs/FRONTEND_DEVELOPMENT_GUIDE.md`)](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/FRONTEND_DEVELOPMENT_GUIDE.md)
+- 🔌 [Đặc tả API Backend toàn diện (`docs/api_specifications.md`)](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/api_specifications.md)
+- 🎨 [Đặc tả Hệ thống Thiết kế UI/UX Stitch (`docs/ui_ux_design_system.md`)](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/ui_ux_design_system.md)
+- 🗄️ [Từ điển Dữ liệu Cơ sở Dữ liệu (`docs/database_schema.md`)](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/database_schema.md)
+- 🗺️ [Lộ trình Dự án & Các Quyết định Kỹ thuật (`docs/project_roadmap_and_decisions.md`)](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/project_roadmap_and_decisions.md)
+- 🌐 [Kho Tri thức Dự án Toàn Diện (`docs/README.md`)](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/README.md)

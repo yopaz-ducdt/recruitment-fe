@@ -24,6 +24,8 @@
 - **Core**: React 19 (`^19.3.x`), TypeScript (`~6.0.x`), Vite 8 (`^8.3.x`).
 - **Styling**: Tailwind CSS v4 (`^4.3.x`) via `@tailwindcss/vite`.
   > **Important**: Do NOT create `tailwind.config.js`. Use CSS theme variables (`@theme`) directly in `src/index.css`.
+  - Use the semantic color utilities defined there (`bg-primary`, `text-on-surface`, `border-outline-variant`, etc.), not repeated arbitrary hex values.
+  - Use Tailwind v4 utility names such as `bg-linear-to-r`, `shadow-xs`, `backdrop-blur-xs`, and `outline-hidden`; use opacity modifiers such as `bg-primary/10`.
 - **Routing**: `react-router-dom` v7 (`^7.18.x`).
 - **Data Fetching & Server State**: `@tanstack/react-query` v5 (`^5.108.x`).
   - Always use v5 object syntax: `useQuery({ queryKey, queryFn })`. Legacy v4 callbacks (`onSuccess`, `onError` in `useQuery`) are deprecated and forbidden.
@@ -60,11 +62,16 @@ src/
 └── main.tsx            # Application entry point
 ```
 
+### Import Paths
+- Use `@/` for imports across directories under `src/`; it resolves to the `src` directory.
+- Keep `./` imports for same-directory modules and nearby siblings.
+- Keep the alias mapping synchronized in `tsconfig.app.json` and `vite.config.ts`.
+
 ---
 
 ## 4. UI/UX Design System Tokens (Stitch)
 
-Follow the **Intelligent Precision Talent Architecture** (see `../docs/ui_ux_design_system.md`):
+Follow the **Intelligent Precision Talent Architecture** (see [UI/UX design system](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/ui_ux_design_system.md)):
 
 - **Typography**: Font family `Inter` with `line-height >= 1.4`. Apply `tabular-nums` for all numbers, salaries, percentages, and AI matching scores.
 - **Color Palette**:
@@ -79,7 +86,7 @@ Follow the **Intelligent Precision Talent Architecture** (see `../docs/ui_ux_des
 
 ## 5. API Contracts & Authentication Rules
 
-- **Zero Hallucination Policy**: Strictly align all request/response DTOs with `../docs/api_specifications.md` and `docs/FRONTEND_DEVELOPMENT_GUIDE.md`. Never invent non-existent fields.
+- **Zero Hallucination Policy**: Strictly align all request/response DTOs with [API specifications](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/api_specifications.md) and `docs/FRONTEND_DEVELOPMENT_GUIDE.md`. Never invent non-existent fields.
 - **Centralized Client**: All requests MUST use `src/services/apiClient.ts` (Vite proxies `/api` to `http://localhost:8080`).
 - **JWT Handling**:
   - Automatically append `Authorization: Bearer <accessToken>`.
@@ -108,4 +115,4 @@ npm run build
 - Claude Code Rules: [`CLAUDE.md`](file:///home/ducdt/Other/recruitment-fe/CLAUDE.md)
 - Cursor Rules: [`.cursorrules`](file:///home/ducdt/Other/recruitment-fe/.cursorrules)
 - Frontend Development Guide: [`docs/FRONTEND_DEVELOPMENT_GUIDE.md`](file:///home/ducdt/Other/recruitment-fe/docs/FRONTEND_DEVELOPMENT_GUIDE.md)
-- Backend API Specifications: [`../docs/api_specifications.md`](file:///home/ducdt/Other/docs/api_specifications.md)
+- Backend API Specifications: [API specifications](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/api_specifications.md)

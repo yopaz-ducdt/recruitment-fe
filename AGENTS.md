@@ -63,20 +63,28 @@ src/
 └── main.tsx            # Application entry point
 ```
 
+### 3.1. Import Path Convention
+- Use the `@/` alias for imports that cross directories under `src/` (for example, `@/components/ui/Button` or `@/services/authApi`).
+- Keep relative imports for files in the same directory or a nearby sibling module (for example, `./LoadingSpinner`).
+- The alias is rooted at `recruitment-fe/src` and must stay synchronized between `tsconfig.app.json` and `vite.config.ts`.
+- Do not add `baseUrl` just to configure this alias; TypeScript `paths` can be used without it.
+
 ---
 
 ## 4. UI/UX Design System Tokens (Stitch)
 
-The UI adheres to the **Intelligent Precision Talent Architecture** design system (see `../docs/ui_ux_design_system.md`):
+The UI adheres to the **Intelligent Precision Talent Architecture** design system (see [UI/UX design system](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/ui_ux_design_system.md)):
 
 ### 4.1. Typography
 - **Primary Font**: `Inter` (ensure `line-height >= 1.4` for optimal text rendering).
 - **Tabular Figures**: Always apply Tailwind class `tabular-nums` for numeric figures (salaries, percentages, applicant counts, AI matching scores) to prevent layout shifts.
 
 ### 4.2. Color Tokens
-- **Primary (Royal Tech Blue)**: `#1D4ED8` (`blue-700`) — Primary actions, active navigation states, verified badges.
-- **Secondary / AI Core (Deep Teal)**: `#0D9488` (`teal-600`) — AI parsing highlights, skill fit indicators, radar charts.
-- **Tertiary (Cyan Accent)**: `#06B6D4` (`cyan-500`) — AI action gradients, status progress bars.
+- Define shared colors and typography with Tailwind CSS v4 `@theme` variables in `src/index.css`; do not create a legacy `tailwind.config.js`.
+- Use semantic utilities such as `bg-primary`, `text-on-surface`, `border-outline-variant`, `bg-success/10`, and `text-error-foreground` instead of repeating raw hex values or unrelated palette colors in components.
+- **Primary (Royal Tech Blue)**: `#1D4ED8` — Primary actions, active navigation states, verified badges.
+- **Secondary / AI Core (Deep Teal)**: `#0D9488` — AI parsing highlights, skill fit indicators, radar charts.
+- **Tertiary (Cyan Accent)**: `#06B6D4` — AI action gradients, status progress bars.
 - **Surface**: `#FAF8FF` — Page canvas background.
 - **Surface Container Lowest**: `#FFFFFF` — Cards, modals, dropdown containers.
 - **Status Colors**:
@@ -84,17 +92,22 @@ The UI adheres to the **Intelligent Precision Talent Architecture** design syste
   - `warning`: `#F59E0B` (Pending approvals, action required).
   - `error`: `#EF4444` / `#BA1A1A` (Form validation errors, rejected status, closed jobs).
 
-### 4.3. Corner Radii
-- `rounded` (8px): Action buttons, inputs, dropdown menus.
-- `rounded-lg` (16px): Job listing cards, sticky filter panels, dialog frames.
-- `rounded-xl` (24px): Hero containers, summary metric dashboards.
+### 4.3. Tailwind CSS v4 Utilities
+- Use v4 utility names, including `bg-linear-to-r` / `bg-linear-to-tr` for gradients, `shadow-xs` for the small shadow scale, `backdrop-blur-xs`, and `outline-hidden`.
+- Prefer the explicit radius scale (`rounded-sm`, `rounded-md`, `rounded-lg`, etc.) over the legacy bare `rounded` utility.
+- Use opacity modifiers such as `bg-primary/10`; do not use removed `*-opacity-*` utilities.
+
+### 4.4. Corner Radii
+- `rounded-lg` (8px): Action buttons, inputs, dropdown menus.
+- `rounded-2xl` (16px): Job listing cards, sticky filter panels, dialog frames.
+- `rounded-3xl` (24px): Hero containers, summary metric dashboards.
 - `rounded-full`: AI Match badges (`⚡ 94% Match`), verified chips, avatars.
 
 ---
 
 ## 5. Backend Contract & API Integration
 
-> **CRITICAL RULE**: Never hallucinate API endpoints or request/response fields. All payloads and DTOs must match `../docs/api_specifications.md` and `docs/FRONTEND_DEVELOPMENT_GUIDE.md` with 100% precision.
+> **CRITICAL RULE**: Never hallucinate API endpoints or request/response fields. All payloads and DTOs must match [API specifications](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/api_specifications.md) and `docs/FRONTEND_DEVELOPMENT_GUIDE.md` with 100% precision.
 
 1. **Centralized HTTP Client**:
    - All network calls must pass through `src/services/apiClient.ts`.
