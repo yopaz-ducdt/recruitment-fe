@@ -71,7 +71,7 @@ src/
 
 ## 4. UI/UX Design System Tokens (Stitch)
 
-Follow the **Intelligent Precision Talent Architecture** (see `../docs/ui_ux_design_system.md`):
+Follow the **Intelligent Precision Talent Architecture** (see [UI/UX design system](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/ui_ux_design_system.md)):
 
 - **Typography**: Font family `Inter` with `line-height >= 1.4`. Apply `tabular-nums` for all numbers, salaries, percentages, and AI matching scores.
 - **Color Palette**:
@@ -86,7 +86,7 @@ Follow the **Intelligent Precision Talent Architecture** (see `../docs/ui_ux_des
 
 ## 5. API Contracts & Authentication Rules
 
-- **Zero Hallucination Policy**: Strictly align all request/response DTOs with `../docs/api_specifications.md` and `docs/FRONTEND_DEVELOPMENT_GUIDE.md`. Never invent non-existent fields.
+- **Zero Hallucination Policy**: Strictly align all request/response DTOs with [API specifications](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/api_specifications.md) and `docs/FRONTEND_DEVELOPMENT_GUIDE.md`. Never invent non-existent fields.
 - **Centralized Client**: All requests MUST use `src/services/apiClient.ts` (Vite proxies `/api` to `http://localhost:8080`).
 - **JWT Handling**:
   - Automatically append `Authorization: Bearer <accessToken>`.
@@ -115,4 +115,4 @@ npm run build
 - Claude Code Rules: [`CLAUDE.md`](file:///home/ducdt/Other/recruitment-fe/CLAUDE.md)
 - Cursor Rules: [`.cursorrules`](file:///home/ducdt/Other/recruitment-fe/.cursorrules)
 - Frontend Development Guide: [`docs/FRONTEND_DEVELOPMENT_GUIDE.md`](file:///home/ducdt/Other/recruitment-fe/docs/FRONTEND_DEVELOPMENT_GUIDE.md)
-- Backend API Specifications: [`../docs/api_specifications.md`](file:///home/ducdt/Other/docs/api_specifications.md)
+- Backend API Specifications: [API specifications](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/api_specifications.md)

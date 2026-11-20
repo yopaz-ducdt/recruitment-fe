@@ -2,6 +2,10 @@
 
 > Giao diện người dùng cho nền tảng tuyển dụng thông minh **DDAMatch (TalentMatch)**, tích hợp AI phân tích CV, tính điểm tương thích công việc và quản lý quy trình phỏng vấn.
 
+## 📚 Tài liệu dự án
+
+Tài liệu dùng chung cho Frontend, Backend, AI và thiết kế nằm tại [recruitment-docs](https://github.com/yopaz-ducdt/recruitment-docs), gồm [đặc tả API](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/api_specifications.md), [design system](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/ui_ux_design_system.md) và [roadmap](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/project_roadmap_and_decisions.md).
+
 ---
 
 ## 🚀 Công Nghệ Sử Dụng
@@ -22,7 +26,7 @@
 
 ## 📐 Kiến Trúc Giao Diện & Design System (Stitch)
 
-Giao diện được thiết kế theo hệ thống **Intelligent Precision Talent Architecture** (xem chi tiết tại [`../docs/ui_ux_design_system.md`](file:///home/ducdt/Other/docs/ui_ux_design_system.md)):
+Giao diện được thiết kế theo hệ thống **Intelligent Precision Talent Architecture** (xem chi tiết tại [UI/UX design system](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/ui_ux_design_system.md)):
 
 - **Kiểu chữ (Typography)**: Phông nền chuẩn `Inter` (`line-height >= 1.4`). Bắt buộc dùng `tabular-nums` cho số liệu, mức lương, phần trăm và điểm AI Matching.
 - **Bảng màu chủ đạo (Color Palette)**:
@@ -165,9 +169,9 @@ Dự án áp dụng quy chuẩn phát triển nghiêm ngặt hỗ trợ cả l�
 
 ## 📚 Tài Liệu Kỹ Thuật Liên Quan
 
-- 📘 [Hướng dẫn triển khai Frontend chi tiết (`docs/FRONTEND_DEVELOPMENT_GUIDE.md`)](file:///home/ducdt/Other/docs/FRONTEND_DEVELOPMENT_GUIDE.md)
-- 🔌 [Đặc tả API Backend toàn diện (`docs/api_specifications.md`)](file:///home/ducdt/Other/docs/api_specifications.md)
-- 🎨 [Đặc tả Hệ thống Thiết kế UI/UX Stitch (`docs/ui_ux_design_system.md`)](file:///home/ducdt/Other/docs/ui_ux_design_system.md)
-- 🗄️ [Từ điển Dữ liệu Cơ sở Dữ liệu (`docs/database_schema.md`)](file:///home/ducdt/Other/docs/database_schema.md)
-- 🗺️ [Lộ trình Dự án & Các Quyết định Kỹ thuật (`docs/project_roadmap_and_decisions.md`)](file:///home/ducdt/Other/docs/project_roadmap_and_decisions.md)
-- 🌐 [Kho Tri thức Dự án Toàn Diện (`docs/README.md`)](file:///home/ducdt/Other/docs/README.md)
+- 📘 [Hướng dẫn triển khai Frontend chi tiết (`docs/FRONTEND_DEVELOPMENT_GUIDE.md`)](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/FRONTEND_DEVELOPMENT_GUIDE.md)
+- 🔌 [Đặc tả API Backend toàn diện (`docs/api_specifications.md`)](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/api_specifications.md)
+- 🎨 [Đặc tả Hệ thống Thiết kế UI/UX Stitch (`docs/ui_ux_design_system.md`)](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/ui_ux_design_system.md)
+- 🗄️ [Từ điển Dữ liệu Cơ sở Dữ liệu (`docs/database_schema.md`)](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/database_schema.md)
+- 🗺️ [Lộ trình Dự án & Các Quyết định Kỹ thuật (`docs/project_roadmap_and_decisions.md`)](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/project_roadmap_and_decisions.md)
+- 🌐 [Kho Tri thức Dự án Toàn Diện (`docs/README.md`)](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/README.md)

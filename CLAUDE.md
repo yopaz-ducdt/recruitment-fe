@@ -25,5 +25,5 @@ Refer to `AGENTS.md` for complete guidelines.
 - Follow Tailwind CSS v4 utility conventions and use shared `@theme` color tokens from `src/index.css` instead of repeated raw colors.
 - All HTTP calls must use `src/services/apiClient.ts` with auto token refresh on 401.
 - Strict typing, absolutely no `any`.
-- Keep API contracts in sync with `../docs/api_specifications.md`.
+- Keep API contracts in sync with [API specifications](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/api_specifications.md).
 - Run `npm run lint && npm run build` before finishing any task.

@@ -73,7 +73,7 @@ src/
 
 ## 4. UI/UX Design System Tokens (Stitch)
 
-The UI adheres to the **Intelligent Precision Talent Architecture** design system (see `../docs/ui_ux_design_system.md`):
+The UI adheres to the **Intelligent Precision Talent Architecture** design system (see [UI/UX design system](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/ui_ux_design_system.md)):
 
 ### 4.1. Typography
 - **Primary Font**: `Inter` (ensure `line-height >= 1.4` for optimal text rendering).
@@ -107,7 +107,7 @@ The UI adheres to the **Intelligent Precision Talent Architecture** design syste
 
 ## 5. Backend Contract & API Integration
 
-> **CRITICAL RULE**: Never hallucinate API endpoints or request/response fields. All payloads and DTOs must match `../docs/api_specifications.md` and `docs/FRONTEND_DEVELOPMENT_GUIDE.md` with 100% precision.
+> **CRITICAL RULE**: Never hallucinate API endpoints or request/response fields. All payloads and DTOs must match [API specifications](https://github.com/yopaz-ducdt/recruitment-docs/blob/main/docs/api_specifications.md) and `docs/FRONTEND_DEVELOPMENT_GUIDE.md` with 100% precision.
 
 1. **Centralized HTTP Client**:
    - All network calls must pass through `src/services/apiClient.ts`.
