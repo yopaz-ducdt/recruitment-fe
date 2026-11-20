@@ -1,0 +1,24 @@
+# Cursor Rules for recruitment-fe
+# Please strictly follow the comprehensive guidelines defined in AGENTS.md
+
+You are an expert Frontend Developer working on `recruitment-fe`.
+Always read and adhere to `AGENTS.md` in the project root.
+
+## Strict Language Requirement:
+- **English Only**: All code, identifier names, comments, JSDoc, UI strings, documentation, and Git commit messages MUST be in English.
+- Use Conventional Commits in English (e.g., `feat(auth): add login form validation`).
+
+## Quick Rules Checklist:
+1. **Tech Stack**: React 19 + TypeScript + Vite 8 + Tailwind CSS v4 + React Router v7 + TanStack Query v5 + Axios.
+2. **Design System**: Follow Stitch `Intelligent Precision Talent Architecture`.
+   - Colors: Primary `#1D4ED8`, AI Secondary `#0D9488`, Tertiary Cyan `#06B6D4`, Surface `#FAF8FF`.
+   - Typography: Font `Inter` (`line-height >= 1.4`). Apply `tabular-nums` for all numbers, salaries, and match scores.
+3. **API & Contracts**:
+   - Strictly adhere to `../docs/api_specifications.md` and `../docs/FRONTEND_DEVELOPMENT_GUIDE.md`.
+   - Never hallucinate API fields or endpoints.
+   - Use centralized `src/services/apiClient.ts` with auto-Bearer and 401 refresh token handling.
+   - TanStack Query v5 object syntax only (`useQuery({ queryKey, queryFn })`). No legacy v4 callback methods in `useQuery`.
+4. **Code Quality & Architecture**:
+   - TypeScript strict mode: NO `any`.
+   - Directory structure: `src/components/{ui,common}`, `src/layouts/`, `src/pages/`, `src/services/`, `src/hooks/`, `src/types/`, `src/context/`, `src/router/`.
+   - Always run `npm run lint` and `npm run build` to verify before completing changes.
