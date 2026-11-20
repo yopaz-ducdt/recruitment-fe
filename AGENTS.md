@@ -1,6 +1,6 @@
 # AGENTS.md - Multi-Agent Synchronization Guidelines (`recruitment-fe`)
 
-> **Objective**: This is the mandatory specification for all AI Coding Agents (Antigravity, Cursor, Claude Code, GitHub Copilot, Windsurf, etc.) and human contributors working on `recruitment-fe`. All agents and developers must strictly adhere to these rules to maintain architectural consistency, design token compliance, type safety, and seamless backend integration.
+> **Objective**: This is the mandatory specification for all AI Coding Agents (OpenAI Codex, Antigravity, Cursor, Claude Code, GitHub Copilot, Windsurf, etc.) and human contributors working on `recruitment-fe`. All agents and developers must strictly adhere to these rules to maintain architectural consistency, design token compliance, type safety, and seamless backend integration. Tool-specific instruction files (`CODEX.md`, `CLAUDE.md`, `.cursorrules`, `.github/copilot-instructions.md`) directly inherit from this document.
 
 ---
 
