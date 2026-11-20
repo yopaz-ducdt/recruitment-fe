@@ -4,9 +4,12 @@
 
 ---
 
-## 1. Mandatory Language Standards
+## 1. Mandatory Language Standards & Git Workflow
 
 - **Strict English Only**: All source code, identifiers (functions, variables, components, interfaces), inline comments, JSDoc annotations, Git commit messages, and PR descriptions MUST be written in English.
+- **Branching & PR Policy**:
+  - **NEVER commit directly to `main`**. All changes must be developed on a dedicated branch (`feat/<name>`, `fix/<name>`, `chore/<name>`).
+  - Open a Pull Request (PR) for review and approval before merging into `main`.
 - **Git Commit Messages**: Use English **Conventional Commits**:
   - `feat(scope): concise description`
   - `fix(scope): concise description`

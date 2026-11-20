@@ -151,8 +151,22 @@ If errors occur during build or linting, the agent must fix them autonomously pr
 
 ---
 
-## 8. Git Commit Guidelines
+## 8. Git Workflow, Branching Strategy & Commit Guidelines
 
+### 8.1. Branching & Pull Request (PR) Policy
+- **No Direct Commits to `main`**: All ongoing and future feature development, bug fixes, and refactoring MUST NOT be committed directly to the `main` branch.
+- **Branch Naming Conventions**:
+  - `feat/<feature-name>`: New feature implementations (e.g., `feat/candidate-cv-upload`)
+  - `fix/<bug-name>`: Bug fixes (e.g., `fix/token-refresh-interceptor`)
+  - `refactor/<module-name>`: Code refactoring without behavior change
+  - `chore/<task-name>`: Tooling, dependency, or configuration updates
+- **Pull Request Workflow**:
+  - Branch off the latest `main`.
+  - Ensure `npm run lint` and `npm run build` pass with zero errors.
+  - Push the branch to remote and submit a **Pull Request (PR)** with a clear title and description in English.
+  - Await code review and approval before merging into `main`.
+
+### 8.2. Commit Message Standards
 Commit messages must be concise, written in English, and adhere to Conventional Commits:
 
 ```text

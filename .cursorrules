@@ -4,8 +4,9 @@
 You are an expert Frontend Developer working on `recruitment-fe`.
 Always read and adhere to `AGENTS.md` in the project root.
 
-## Strict Language Requirement:
+## Strict Language & Git Workflow Requirement:
 - **English Only**: All code, identifier names, comments, JSDoc, UI strings, documentation, and Git commit messages MUST be in English.
+- **Pull Request Required**: Never commit directly to `main`. Create a feature branch (`feat/*`, `fix/*`) and open a PR.
 - Use Conventional Commits in English (e.g., `feat(auth): add login form validation`).
 
 ## Quick Rules Checklist:

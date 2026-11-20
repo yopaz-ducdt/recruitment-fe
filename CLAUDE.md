@@ -2,8 +2,9 @@
 
 Refer to `AGENTS.md` for complete guidelines.
 
-## Language Standards
+## Language Standards & Git Workflow
 - **English Only**: All code, comments, documentation, and Git commits MUST be in English.
+- **No Direct Commits to `main`**: Always branch off (`feat/*`, `fix/*`, `chore/*`) and submit a Pull Request (PR).
 - Use Conventional Commits format in English (e.g., `feat(auth): add candidate registration`).
 
 ## Tech Stack

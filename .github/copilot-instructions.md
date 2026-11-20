@@ -4,6 +4,7 @@ Please refer to and follow the comprehensive project rules in `AGENTS.md`.
 
 ## Key Directives:
 - **Language**: English is mandatory for all code, comments, documentation, and Git commit messages.
+- **Pull Request Policy**: Never commit directly to `main`. Create feature branches (`feat/*`, `fix/*`) and submit PRs.
 - **Git Commits**: Conventional Commits in English (e.g., `feat(auth): add login view`).
 - **Framework**: React 19 + TypeScript + Vite 8 + Tailwind CSS v4.
 - **Data & State**: TanStack Query v5 + Axios via `src/services/apiClient.ts`.

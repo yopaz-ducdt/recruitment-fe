@@ -139,6 +139,7 @@ VITE_ENABLE_MOCK_API=false
 Dự án áp dụng quy chuẩn phát triển nghiêm ngặt hỗ trợ cả lập trình viên và các AI Coding Agents:
 
 - **Ngôn ngữ bắt buộc**: **Tiếng Anh 100%** cho mã nguồn, tên biến/hàm, chú thích code (inline comments, JSDoc), commit messages và tài liệu kỹ thuật trong repo.
+- **Quy trình Git & Tạo PR**: **Tuyệt đối không commit trực tiếp vào nhánh `main`**. Mọi tính năng, sửa lỗi hay tái cấu trúc đều phải tạo nhánh riêng (`feat/<tên>`, `fix/<tên>`, `chore/<tên>`) và tạo **Pull Request (PR)** để review trước khi merge vào `main`.
 - **Quy chuẩn Git Commit**: Tuân thủ chuẩn **Conventional Commits** bằng tiếng Anh:
   - `feat(scope): ...`
   - `fix(scope): ...`
