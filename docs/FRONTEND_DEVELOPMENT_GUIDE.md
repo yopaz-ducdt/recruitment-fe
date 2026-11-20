@@ -7,7 +7,7 @@ Tài liệu này dành cho thành viên phụ trách **Frontend (`recruitment-fe
 ## 1. Tổng Quan Công Nghệ & Khung Ứng Dụng
 
 - **Framework**: React 19 + TypeScript + Vite 8.
-- **Styling**: Tailwind CSS v4 bám sát Design System *Intelligent Precision Talent Architecture* trên Stitch (Font: `Inter`, Màu chủ đạo: `#1D4ED8`, AI Teal: `#0D9488`).
+- **Styling**: Tailwind CSS v4 qua `@tailwindcss/vite`, theo Design System *Intelligent Precision Talent Architecture* trên Stitch. Khai báo màu và font dùng chung bằng `@theme` trong `src/index.css`; dùng các class semantic như `bg-primary`, `text-on-surface`, `border-outline-variant`, `bg-success/10`. Không tạo `tailwind.config.js` kiểu v3 hoặc lặp lại mã hex trong component.
 - **Routing**: `react-router-dom` v7 — phân chia 4 Layout:
   1. `AuthLayout`: Dành cho các trang đăng nhập, đăng ký, quên/đặt lại mật khẩu.
   2. `CandidateLayout`: Header tìm việc, menu ứng viên, thông báo, avatar.
@@ -16,6 +16,12 @@ Tài liệu này dành cho thành viên phụ trách **Frontend (`recruitment-fe
 - **Data Fetching & Cache**: `@tanstack/react-query` v5.
 - **HTTP Client**: `axios` kết hợp cấu hình Interceptor gắn Bearer Token và tự động refresh token khi gặp 401.
 - **Proxy Dev**: Đã cấu hình trong `vite.config.ts` để proxy toàn bộ `/api` sang `http://localhost:8080`.
+
+### Quy Ước Import
+- Dùng `@/` cho import giữa các thư mục bên trong `src/`, ví dụ `@/components/ui/Button` hoặc `@/services/authApi`.
+- Dùng `./` cho file cùng thư mục hoặc module lân cận, ví dụ `./LoadingSpinner`.
+- Alias `@/` trỏ tới `src/`; giữ mapping đồng bộ giữa `tsconfig.app.json` và `vite.config.ts`.
+- Ưu tiên utility Tailwind v4 hiện hành như `bg-linear-to-r`, `shadow-xs`, `backdrop-blur-xs`, `outline-hidden`; dùng opacity modifier như `bg-primary/10`.
 
 ---
 

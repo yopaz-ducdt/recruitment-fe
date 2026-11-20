@@ -21,6 +21,8 @@ Refer to `AGENTS.md` for complete guidelines.
 
 ## Architecture & Conventions
 - Maintain strict folder structure in `src/` as outlined in `AGENTS.md`.
+- Use `@/` for cross-directory imports rooted at `src/`, and `./` for same-directory or nearby sibling imports. Keep TypeScript and Vite alias configuration synchronized.
+- Follow Tailwind CSS v4 utility conventions and use shared `@theme` color tokens from `src/index.css` instead of repeated raw colors.
 - All HTTP calls must use `src/services/apiClient.ts` with auto token refresh on 401.
 - Strict typing, absolutely no `any`.
 - Keep API contracts in sync with `../docs/api_specifications.md`.

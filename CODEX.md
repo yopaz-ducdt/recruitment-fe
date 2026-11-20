@@ -24,6 +24,8 @@
 - **Core**: React 19 (`^19.3.x`), TypeScript (`~6.0.x`), Vite 8 (`^8.3.x`).
 - **Styling**: Tailwind CSS v4 (`^4.3.x`) via `@tailwindcss/vite`.
   > **Important**: Do NOT create `tailwind.config.js`. Use CSS theme variables (`@theme`) directly in `src/index.css`.
+  - Use the semantic color utilities defined there (`bg-primary`, `text-on-surface`, `border-outline-variant`, etc.), not repeated arbitrary hex values.
+  - Use Tailwind v4 utility names such as `bg-linear-to-r`, `shadow-xs`, `backdrop-blur-xs`, and `outline-hidden`; use opacity modifiers such as `bg-primary/10`.
 - **Routing**: `react-router-dom` v7 (`^7.18.x`).
 - **Data Fetching & Server State**: `@tanstack/react-query` v5 (`^5.108.x`).
   - Always use v5 object syntax: `useQuery({ queryKey, queryFn })`. Legacy v4 callbacks (`onSuccess`, `onError` in `useQuery`) are deprecated and forbidden.
@@ -59,6 +61,11 @@ src/
 ├── index.css           # Global stylesheet & Tailwind CSS v4 theme tokens
 └── main.tsx            # Application entry point
 ```
+
+### Import Paths
+- Use `@/` for imports across directories under `src/`; it resolves to the `src` directory.
+- Keep `./` imports for same-directory modules and nearby siblings.
+- Keep the alias mapping synchronized in `tsconfig.app.json` and `vite.config.ts`.
 
 ---
 

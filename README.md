@@ -11,7 +11,7 @@
 | **Core Framework** | **React 19** (`^19.3.x`) | Kiến trúc Component hiện đại, React Server Actions / Hooks mới |
 | **Language** | **TypeScript** (`~6.0.x`) | Chế độ `strict: true`, nghiêm cấm `any` |
 | **Build Tool** | **Vite 8** (`^8.3.x`) | Bundler siêu tốc, HMR, hỗ trợ proxy API `/api` |
-| **Styling** | **Tailwind CSS v4** (`^4.3.x`) | Tích hợp trực tiếp qua `@tailwindcss/vite`, cấu hình biến `@theme` trong CSS |
+| **Styling** | **Tailwind CSS v4** (`^4.3.x`) | Tích hợp qua `@tailwindcss/vite`; design tokens trong `src/index.css` bằng `@theme` |
 | **Routing** | **React Router v7** (`^7.18.x`) | Quản lý route đa phân hệ, Route Guard theo quyền (RBAC) |
 | **Server State** | **TanStack React Query v5** (`^5.108.x`) | Quản lý cache, polling, optimistic updates (cú pháp object `useQuery`) |
 | **HTTP Client** | **Axios** (`^1.21.x`) | Instance tập trung với interceptor tự động refresh token khi gặp `401` |
@@ -32,7 +32,14 @@ Giao diện được thiết kế theo hệ thống **Intelligent Precision Tale
   - **Surface Canvas**: `#FAF8FF` — Nền trang ứng dụng.
   - **Surface Container Lowest**: `#FFFFFF` — Nền thẻ card, bảng biểu, modal.
   - **Status**: Success `#10B981` (điểm tương thích $\ge 85\%$), Warning `#F59E0B`, Error `#EF4444`.
-- **Bo góc (Corner Radii)**: `rounded` (8px) cho button/input; `rounded-lg` (16px) cho card công việc; `rounded-xl` (24px) cho modal/hero; `rounded-full` cho badge và avatar.
+- **Bo góc (Corner Radii)**: Dùng utility Tailwind v4 có scale tường minh. Với scale mặc định, dùng `rounded-lg` (8px) cho button/input, `rounded-2xl` (16px) cho card, `rounded-3xl` (24px) cho hero/modal và `rounded-full` cho badge/avatar.
+
+## 📦 Quy Ước Import
+
+- Dùng alias `@/` cho import giữa các thư mục trong `src/`, ví dụ `@/components/ui/Card` hoặc `@/hooks/useAuth`.
+- Giữ import tương đối `./` cho module cùng thư mục hoặc file lân cận, ví dụ `./LoadingSpinner`.
+- Alias `@/` ánh xạ tới `src/` và được cấu hình trong `tsconfig.app.json` cùng `vite.config.ts`; hai mapping phải luôn đồng bộ.
+- Dùng utility Tailwind v4 hiện hành như `bg-linear-to-r`, `shadow-xs`, `backdrop-blur-xs`, `outline-hidden` và opacity modifier (`bg-primary/10`).
 
 ---
 
